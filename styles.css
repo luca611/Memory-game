@@ -1,91 +1,206 @@
 @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
 body {
-    text-align: center;
-    font-family: "Slackey", sans-serif;
-    background-color: #FAEFD6;
+  text-align: center;
+  font-family: "Slackey", sans-serif;
+  background-color: #FAEFD6;
 }
 
 p {
-    margin-top: -1rem;
-    font-size: 1.5rem;
-    color: #000000;
+  margin-top: -1rem;
+  font-size: 1.5rem;
+  color: #000000;
 }
 
 h1 {
-    font-size:5rem;
-    color: #FF8C37;
+  font-size: 5rem;
+  color: #FF8C37;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #FF8C37;
 }
 
 .gaegu {
-    font-family: "Gaegu", sans-serif;
+  font-family: "Gaegu", sans-serif;
+}
+
+.noto-color-emoji-regular {
+  font-family: "Noto Color Emoji", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.hide-message {
+  display: none;
+}
+
+.winning-message {
+  position: absolute;
+  width: fit-content;
+  padding: 2rem;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  top: 20%;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  animation: popup 0.5s ease-in-out;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 20px auto;
-    width: 60vw;
-    max-width: 30rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px auto;
+  width: 60vw;
+  max-width: 30rem;
+}
+
+.flag {
+  margin-top: 30%;
+  width: 100%;
+  height: auto;
 }
 
 .card {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1/1.5;
-    perspective: 1000px;
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 1/1.5;
+  perspective: 1000px;
 }
 
 .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
-.card-front,.card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
 }
 
 .card-front {
-    background-color: #FF8C37;
-    color: #FAEFD6;
+  background-color: #FF8C37;
+  border-radius: 10px;
+  color: #FAEFD6;
 }
 
 .card-back {
-    background-color: rgb(9, 175, 180);
-    color: #FAEFD6;
-    transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: rgb(9, 175, 180);
+  border-radius: 10px;
+  color: #FAEFD6;
+  transform: rotateY(180deg);
+  font-family: "Noto Color Emoji", sans-serif;
+  font-size: 3rem;
 }
 
-.card:hover .card-inner {
-    transform: rotateY(180deg);
+.flip .card-inner {
+  transform: rotateY(180deg);
+  border-radius: 10px;
+}
+
+
+@keyframes confettiRain {
+  0% {
+    opacity: 1;
+    margin-top: -100vh;
+    margin-left: -200px;
+  } 
+  
+  100% {
+    opacity: 1;
+    margin-top: 100vh;
+    margin-left: 200px;
+  }
+}
+
+.confetti {
+  opacity: 0;
+  position: absolute;
+  width: 1rem;
+  height: 1.5rem;
+  animation: confettiRain 5s infinite;
 }
 
 
 
-@media screen and (max-width: 1024px){
-    h1 {
-        font-size: 5rem;
-    }
+
+@media (min-width: 0px) {
+  .game-board {
+    width: 90vw;
+    max-width: 90vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .card-back {
+    font-size: 1.5rem;
+  }
 }
 
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 6rem;
-    }
+@media (min-width: 600px) {
+  .game-board {
+    width: 65vw;
+    max-width: 60rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .card-back {
+    font-size: 2rem;
+  }
 }
 
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 5rem;
-    }
+@media (min-width: 900px) {
+  .game-board {
+    width: 45vw;
+    max-width: 40rem;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .card-back {
+    font-size: 2.5rem;
+  }
 }

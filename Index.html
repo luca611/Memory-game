@@ -1,51 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Memory Game</title>
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
-    <h1>Memory Game</h1>
-    <p class="gaegu">match all the card to win!</p>
-    <div class="game-board">
-        <div class="card" id="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <h2>Front Face</h2>
-                    
-                </div>
-                <div class="card-back">
-                    <h2>Back Face</h2>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="card" id="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <h2>Front Face</h2>
-                    
-                </div>
-                <div class="card-back">
-                    <h2>Back Face</h2>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="card" id="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <h2>Front Face</h2>
-                    
-                </div>
-                <div class="card-back">
-                    <h2>Back Face</h2>
-                    
-                </div>
-            </div>
-        </div>
+    <div id="victory" class="hide-message">
+        <h2>🎉 Congratulations! 🎉</h1>
+        <p id="attempts">You won the game in </p>
+        <button onclick="restartGame()">Play Again</button>
     </div>
+
+    <h1>Memory Game</h1>
+    <p class="gaegu">match all the cards to win! 🐥</p>
+    <div id="GameBody" class="game-board">
+        
+    </div>
+    <div id="confetti-wrapper">
 </body>
+<script>
+    createCards();
+</script>
 </html>
