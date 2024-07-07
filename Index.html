@@ -8,19 +8,24 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
+
     <div id="victory" class="hide-message">
-        <h2>🎉 Congratulations! 🎉</h1>
-        <p id="attempts">You won the game in </p>
-        <button onclick="restartGame()">Play Again</button>
+        <p class="bigIcon">🎉</p>
+        <h2>Congratulations!</h2>
+        <p id="attempts" class="congrats">Loading...</p>
+        <button onclick="resetGame()" class="play-again">Play Again</button>
     </div>
 
+    <div class="" id="overlay"></div>
     <h1>Memory Game</h1>
-    <p class="gaegu">match all the cards to win! 🐥</p>
+    <p class="gaegu">match all the cards to win! 🦝</p>
     <div id="GameBody" class="game-board">
         
     </div>
     <div id="confetti-wrapper">
 </body>
+
+
 <script>
     createCards();
 </script>

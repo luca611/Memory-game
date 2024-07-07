@@ -2,10 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
+/*---------page styles---------*/
 body {
   text-align: center;
   font-family: "Slackey", sans-serif;
   background-color: #FAEFD6;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 p {
@@ -21,9 +25,10 @@ h1 {
 
 h2 {
   font-size: 3rem;
-  color: #FF8C37;
+  color: #FFEEC6;
 }
 
+/*---------fonts---------*/
 .gaegu {
   font-family: "Gaegu", sans-serif;
 }
@@ -33,16 +38,20 @@ h2 {
   font-weight: 400;
   font-style: normal;
 }
+
+/*---------game styles---------*/
+
+/*winning message*/
 .hide-message {
   display: none;
 }
 
 .winning-message {
   position: absolute;
-  width: fit-content;
+  width: 50%;
   padding: 2rem;
   font-size: 2rem;
-  background-color: white;
+  background-color: #09AFB4;
   border-radius: 10px;
   margin: auto;
   top: 20%;
@@ -57,6 +66,45 @@ h2 {
   align-items: center;
 }
 
+/*winning message components*/
+.play-again {
+  background-color: #FF8C37;
+  color: #FAEFD6;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ;
+  font-family: "Slackey", sans-serif;
+}
+
+.play-again:hover {
+  transform: scale(1.1), rotate(3deg);
+}
+
+.congrats{
+  font-size: 2rem;
+  font-family: "Gaegu", sans-serif;
+  color: #FFEEC6;
+}
+
+.bigIcon {
+  font-size: 4rem;
+  margin-bottom: -1rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
 @keyframes popup {
   0% {
     transform: scale(0);
@@ -69,6 +117,8 @@ h2 {
   }
 }
 
+/*game board*/
+
 .game-board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -78,12 +128,7 @@ h2 {
   max-width: 30rem;
 }
 
-.flag {
-  margin-top: 30%;
-  width: 100%;
-  height: auto;
-}
-
+/*card styles*/
 .card {
   position: relative;
   width: 100%;
@@ -135,6 +180,25 @@ h2 {
 }
 
 
+.flag {
+  margin-top: 30%;
+  width: 100%;
+  height: auto;
+}
+
+
+/*confetti animation*/
+
+
+.confetti {
+  opacity: 0;
+  position: absolute;
+  width: 1rem;
+  height: 1.5rem;
+  animation: confettiRain 5s infinite;
+}
+
+
 @keyframes confettiRain {
   0% {
     opacity: 1;
@@ -149,16 +213,8 @@ h2 {
   }
 }
 
-.confetti {
-  opacity: 0;
-  position: absolute;
-  width: 1rem;
-  height: 1.5rem;
-  animation: confettiRain 5s infinite;
-}
 
-
-
+/*----media queries----*/
 
 @media (min-width: 0px) {
   .game-board {
@@ -172,6 +228,25 @@ h2 {
 
   .card-back {
     font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .congrats{
+    font-size: 1.5rem;
+  }
+
+  .winning-message {
+    width: auto;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+  }
+
+  .bigIcon{
+    font-size: 9rem;
   }
 }
 
@@ -188,6 +263,24 @@ h2 {
   .card-back {
     font-size: 2rem;
   }
+
+  h2{
+    font-size: 2rem;
+
+  }
+
+  .congrats{
+    font-size: 1.5rem;
+  }
+
+  .winning-message{
+    width: 75%;
+    bottom: 20%;
+  }
+
+  .bigIcon{
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 900px) {
@@ -202,5 +295,38 @@ h2 {
 
   .card-back {
     font-size: 2.5rem;
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  .winning-message{
+    width: 60%;
+    bottom: 20%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .game-board {
+    width: 50vw;
+    max-width: 50rem;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .card-back {
+    font-size: 2.5rem;
+  }
+
+  h2{
+    font-size: 3rem;
+  }
+
+  .winning-message{
+    width: 40%;
+    bottom: 20%;
   }
 }
