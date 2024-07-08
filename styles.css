@@ -285,8 +285,8 @@ h2 {
 
 @media (min-width: 900px) {
   .game-board {
-    width: 40vw;
-    max-width: 35rem;
+    width: 35vw;
+    max-width: 30rem;
   }
 
   h1 {
