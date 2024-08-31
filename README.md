@@ -6,6 +6,10 @@ This game was made in a couple of hour just to spend some time alone with html a
 
 ---
 
+## Where to play it
+
+https://luca611.github.io/Memory-game/
+
 ## Theme of the game
 This game was made usig the style of the arcade hack club.
 
